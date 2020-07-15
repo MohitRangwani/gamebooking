@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <H1>{{selectedProvider}}</H1>
+</div>
+<div class="container-fluid">
+<div class="row">
+<div class ="col-sm-4" *ngFor = " let g of games">
+    <div class="card border-primary mb-3">
+        <div class="card-header">{{g.name}}</div>
+        <div class="card-body">
+          <h4 class="card-title">Price per hour : {{g.price}}</h4>
+          <button type="button" class="btn btn-primary" [routerLink]="['/add-booking/' , g.name]">Select</button>
+           
+        </div>
+      </div>
+</div><BR>
+  <div class="container-fluid">
+    <button type="button" class="btn btn-info" (click)="back()">Back</button>
+  </div>
+
+</div>
+

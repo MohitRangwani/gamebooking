@@ -1,0 +1,17 @@
+<div class="container"> 
+    <h1>{{selectedLocation}} has {{noOfProviders}} providers</h1>
+    <BR>
+    <div class="row">
+      <div class ="col-sm-4" *ngFor = " let p of providers">
+          <div class="card border-primary mb-3">
+              <div class="card-header">{{p.name}}</div>
+              <div class="card-body">
+                <h4 class="card-title"><Address></Address> Address : {{p.address}}</h4>
+                <button type="button" class="btn btn-primary" (click)="OnSelectProvider(p)">Select</button>
+                 
+              </div>
+            </div>
+      </div>
+      </div>
+      <button type="button" class="btn btn-info" (click)="back()">Back</button>
+  </div>

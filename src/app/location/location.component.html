@@ -1,0 +1,18 @@
+<div class="container">
+<form (submit)="onFormSubmit(locForm)" #locForm="ngForm">
+<div class="form-group">
+    <label for="exampleSelect1">Select Location</label>
+    <select class="form-control" id="exampleSelect1" name="loc" required ngModel #loc="ngModel">
+      <option  *ngFor="let l of locations">{{l.name}}</option>
+    </select>
+    <div *ngIf="loc.invalid && (loc.dirty || loc.touched)"
+     class="alert alert-danger">
+    <div *ngIf="loc.errors.required">
+     Loction is required.
+    </div> 
+    </div>
+</div>
+<input type="submit" [disabled]="!locForm.valid" value="Submit">
+</form>
+</div>
+

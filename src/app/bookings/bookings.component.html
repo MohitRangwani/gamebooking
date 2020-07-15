@@ -1,0 +1,52 @@
+<BR>
+<div class="alert alert-dismissible alert-danger" *ngIf="!showBookings">
+ 
+  <strong>You have no bookings yet</strong> <BR>
+
+</div>
+&nbsp;&nbsp;
+<button type="button" class="btn btn-primary" (click) = "changeLocation()"  *ngIf="!showBookings">Add Booking </button>
+<div class ="container-fluid" *ngIf="showBookings">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Provider  </th>
+        <th scope="col">Game </th>
+        <th scope="col">Name </th>
+        <th scope="col">No of Players</th>
+        <th scope="col">Time Slot </th>
+        <th scope="col">Price </th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor ="let b of bookings">
+        <td>{{selectedProvider}}</td>
+        <td>{{b.gameName}}</td>
+        <td>{{b.name}}</td>
+        <td>{{b.noOfPlayers}}</td>
+        <td>{{b.timeSlot}}</td>
+        <td>{{b.price}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="onDelete(b)">Delete</button></td>
+      </tr>
+      <tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Total = {{total}}</td>
+        </tr>
+        <tr>
+
+    </tbody>
+  </table> 
+  <BR>
+  <button type="button" class="btn btn-primary" (click) = "changeLocation()">Change Location </button>
+    &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary" (click) = "changeProvider()">Change Provider </button>
+    &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary" (click) = "addBooking()">Add Booking </button>
+  <HR>
+  </div>
+
+    
